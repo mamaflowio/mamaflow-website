@@ -85,8 +85,15 @@ img{max-width:100%;display:block;}a{text-decoration:none;color:inherit;}
 .reveal.visible{opacity:1;transform:translateY(0);}
 .toast-global{position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--warm-dk);color:var(--cream);border:1px solid rgba(255,202,212,.15);padding:14px 24px;border-radius:100px;font-size:13.5px;font-weight:500;box-shadow:0 8px 32px rgba(44,31,26,.3);opacity:0;transition:all .4s var(--ease);pointer-events:none;white-space:nowrap;z-index:9999;}
 .toast-global.show{opacity:1;transform:translateX(-50%) translateY(0);}
-@media(max-width:900px){.footer-inner{grid-template-columns:1fr;gap:32px;}.nav-links{display:none;}.nav-hamburger{display:flex;}}
+@media(max-width:900px){.footer-inner{grid-template-columns:1fr;gap:32px;}}@media(max-width:768px){.nav-links{display:none;}.nav-hamburger{display:flex;}}
 @media(max-width:600px){.container{padding:0 20px;}.section{padding:72px 0;}.nav-inner{padding:0 20px;}}
+
+.mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;background:rgba(250,247,244,.98);backdrop-filter:blur(16px);border-bottom:1px solid rgba(232,222,218,.5);padding:20px 32px;z-index:998;flex-direction:column;gap:0;box-shadow:0 8px 32px rgba(44,31,26,.08);}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{font-size:15px;font-weight:500;color:var(--warm-mid);padding:14px 0;border-bottom:1px solid var(--sand);letter-spacing:.02em;transition:color .2s;}
+.mobile-menu a:last-child{border-bottom:none;}
+.mobile-menu a:hover{color:var(--warm-dk);}
+@media(min-width:769px){.mobile-menu{display:none !important;}}
 </style>
 <style>
 .page-hero{padding:140px 0 80px;background:var(--parchment);position:relative;}
@@ -125,6 +132,13 @@ img{max-width:100%;display:block;}a{text-decoration:none;color:inherit;}
     <div class="nav-hamburger" onclick="toggleMobileMenu()"><span></span><span></span><span></span></div>
   </div>
 </nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html#how-it-works" onclick="closeMobileMenu()">How It Works</a>
+  <a href="science.html" onclick="closeMobileMenu()">The Science</a>
+  <a href="index.html#pricing" onclick="closeMobileMenu()">Pricing</a>
+  <a href="faq.html" onclick="closeMobileMenu()">FAQs</a>
+  <a href="index.html#waitlist" onclick="closeMobileMenu()" style="color:var(--mauve);font-weight:600;">Join Waitlist →</a>
+</div>
 
 <section class="page-hero">
   <div class="container">
@@ -284,7 +298,8 @@ const ro=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting){e.targe
 document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
 function showToast(msg){const t=document.getElementById('toastGlobal');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),4000);}
 function scrollToWaitlist(){window.location='index.html#waitlist';}
-function toggleMobileMenu(){showToast('Use the links above or below to navigate.');}
+function closeMobileMenu(){const m=document.getElementById("mobileMenu");if(m)m.classList.remove("open");}
+function toggleMobileMenu(){const m=document.getElementById('mobileMenu');m.classList.toggle('open');}
 function toggleFaq(el){const item=el.closest('.faq-item');const wasOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));if(!wasOpen)item.classList.add('open');}
 function filterFaq(cat,btn){document.querySelectorAll('.faq-cat-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.faq-item').forEach(item=>{item.style.display=(item.dataset.cat===cat)?'':'none';item.classList.remove('open');});}
 document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('.faq-item').forEach(item=>{item.style.display=item.dataset.cat==='app'?'':'none';});});
