@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Science Behind MamaFlow — Clinical Framework & Evidence</title>
+<meta name="description" content="MamaFlow's postpartum recovery framework is grounded in RCOG, ACOG and POGP guidelines. Separate caesarean and vaginal pathways, ethnicity-aware modelling, and clinical review before launch.">
+<link rel="canonical" href="https://mamaflow.io/science.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blush:#FFCAD4;--pink:#F4ACB7;--mauve:#9D8189;--mauve-dk:#7A5F65;--mauve-lt:#C4A8AE;
+  --sage:#B8CCBA;--sage-dk:#8FAF8A;--sage-lt:#E8F2EB;
+  --terra:#C4856A;--terra-lt:#F5E8E2;
+  --cream:#FAF7F4;--parchment:#F2EDE8;--sand:#E8DEDA;
+  --warm-dk:#2C1F1A;--warm-mid:#6B4846;--warm-lt:#A08880;--white:#FFFFFF;
+  --ff-d:'Cormorant Garamond',Georgia,serif;
+  --ff-b:'Figtree',system-ui,sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --ease-back:cubic-bezier(.34,1.56,.64,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{font-family:var(--ff-b);background:var(--cream);color:var(--warm-dk);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+img{max-width:100%;display:block;}a{text-decoration:none;color:inherit;}
+.container{max-width:1120px;margin:0 auto;padding:0 32px;}
+.section{padding:100px 0;}.section-alt{background:var(--parchment);}.section-dark{background:var(--warm-dk);}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mauve);margin-bottom:16px;}
+.eyebrow::before{content:'';width:20px;height:1px;background:var(--mauve);}
+.h1{font-family:var(--ff-d);font-size:clamp(38px,5.5vw,72px);font-weight:300;line-height:1.06;color:var(--warm-dk);}
+.h1 em{font-style:italic;color:var(--mauve);}
+.h2{font-family:var(--ff-d);font-size:clamp(28px,3.5vw,52px);font-weight:300;line-height:1.1;color:var(--warm-dk);}
+.h2 em{font-style:italic;color:var(--mauve);}
+.lead{font-size:17px;font-weight:300;color:var(--warm-mid);line-height:1.75;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:100px;font-family:var(--ff-b);font-size:13px;font-weight:600;letter-spacing:.05em;border:none;cursor:pointer;transition:all .25s var(--ease);}
+.btn-primary{background:var(--warm-dk);color:var(--cream);}
+.btn-primary:hover{background:var(--mauve-dk);transform:translateY(-2px);box-shadow:0 8px 24px rgba(44,31,26,.2);}
+.nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(250,247,244,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(232,222,218,.5);transition:box-shadow .3s;}
+.nav.scrolled{box-shadow:0 2px 20px rgba(44,31,26,.08);}
+.nav-inner{max-width:1120px;margin:0 auto;padding:0 32px;height:68px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-family:var(--ff-d);font-size:22px;font-weight:600;color:var(--warm-dk);letter-spacing:.04em;}
+.nav-logo span{color:var(--mauve);font-style:italic;}
+.nav-links{display:flex;gap:32px;}
+.nav-links a{font-size:13px;font-weight:500;color:var(--warm-mid);letter-spacing:.03em;transition:color .2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--warm-dk);font-weight:600;}
+.nav-cta{display:flex;gap:10px;align-items:center;}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
+.nav-hamburger span{width:22px;height:1.5px;background:var(--warm-dk);transition:all .25s;}
+.email-form{display:flex;gap:0;background:white;border:1.5px solid var(--sand);border-radius:100px;padding:5px 5px 5px 18px;max-width:440px;}
+.email-form:focus-within{box-shadow:0 4px 28px rgba(157,129,137,.2);border-color:var(--mauve-lt);}
+.email-input{flex:1;border:none;outline:none;font-family:var(--ff-b);font-size:14px;color:var(--warm-dk);background:transparent;}
+.email-input::placeholder{color:var(--warm-lt);}
+.email-submit{padding:11px 22px;border-radius:100px;background:var(--warm-dk);color:var(--cream);font-family:var(--ff-b);font-size:13px;font-weight:600;border:none;cursor:pointer;white-space:nowrap;transition:background .2s;}
+.email-submit:hover{background:var(--mauve-dk);}
+.email-submit.success{background:var(--sage-dk);}
+.hero-social-proof{display:flex;align-items:center;gap:12px;margin-top:18px;}
+.avatars{display:flex;}
+.av{width:28px;height:28px;border-radius:50%;border:2px solid var(--white);margin-left:-8px;font-size:10px;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--white);}
+.av:first-child{margin-left:0;}
+.av:nth-child(1){background:var(--mauve);}.av:nth-child(2){background:var(--sage-dk);}.av:nth-child(3){background:var(--terra);}
+.proof-text{font-size:13px;color:var(--warm-lt);padding-left:8px;}
+.proof-text strong{color:var(--warm-mid);font-weight:600;}
+.final-cta{background:linear-gradient(135deg,var(--parchment) 0%,rgba(255,202,212,.2) 50%,rgba(184,204,186,.15) 100%);padding:120px 0;text-align:center;}
+.final-cta .lead{max-width:500px;margin:0 auto 36px;}
+.final-cta .email-form{margin:0 auto;}
+.final-cta-note{font-size:12.5px;color:var(--warm-lt);margin-top:16px;}
+.footer{background:var(--warm-dk);padding:48px 0;}
+.footer-inner{max-width:1120px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px;align-items:start;}
+.footer-logo{font-family:var(--ff-d);font-size:22px;font-weight:600;color:var(--blush);letter-spacing:.04em;margin-bottom:10px;}
+.footer-tagline{font-size:12.5px;color:rgba(255,202,212,.7);line-height:1.65;font-weight:300;}
+.footer-col h4{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,202,212,.85);margin-bottom:14px;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:9px;}
+.footer-col ul li a{font-size:13px;color:rgba(255,202,212,.72);transition:color .2s;font-weight:300;}
+.footer-col ul li a:hover{color:var(--blush);}
+.footer-bottom{max-width:1120px;margin:32px auto 0;padding:24px 32px 0;border-top:1px solid rgba(255,202,212,.08);display:flex;justify-content:space-between;align-items:center;}
+.footer-copy{font-size:12px;color:rgba(255,202,212,.6);}
+.footer-social{display:flex;gap:16px;}
+.footer-social a{font-size:12px;color:rgba(255,202,212,.65);transition:color .2s;}
+.footer-social a:hover{color:var(--blush);}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+.fade-up{animation:fadeUp .65s var(--ease) both;}
+.d1{animation-delay:.1s;}.d2{animation-delay:.2s;}.d3{animation-delay:.3s;}.d4{animation-delay:.4s;}.d5{animation-delay:.5s;}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .6s var(--ease),transform .6s var(--ease);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.toast-global{position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--warm-dk);color:var(--cream);border:1px solid rgba(255,202,212,.15);padding:14px 24px;border-radius:100px;font-size:13.5px;font-weight:500;box-shadow:0 8px 32px rgba(44,31,26,.3);opacity:0;transition:all .4s var(--ease);pointer-events:none;white-space:nowrap;z-index:9999;}
+.toast-global.show{opacity:1;transform:translateX(-50%) translateY(0);}
+@media(max-width:900px){.footer-inner{grid-template-columns:1fr;gap:32px;}.nav-links{display:none;}.nav-hamburger{display:flex;}}
+@media(max-width:600px){.container{padding:0 20px;}.section{padding:72px 0;}.nav-inner{padding:0 20px;}}
+</style>
+<style>
+.page-hero{padding:140px 0 80px;background:var(--warm-dk);position:relative;overflow:hidden;}
+.page-hero::before{content:'';position:absolute;right:-80px;top:-80px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(255,202,212,.12),transparent 65%);pointer-events:none;}
+.page-hero .eyebrow{color:var(--blush);}
+.page-hero .eyebrow::before{background:var(--blush);}
+.page-hero .h1{color:var(--cream);margin-bottom:20px;}
+.page-hero .h1 em{color:var(--blush);}
+.page-hero .lead{color:rgba(255,202,212,.65);max-width:580px;}
+.breadcrumb{font-size:12px;color:rgba(255,202,212,.4);margin-bottom:20px;}
+.breadcrumb a{color:rgba(255,202,212,.5);transition:color .2s;}
+.breadcrumb a:hover{color:var(--blush);}
+.breadcrumb span{margin:0 8px;}
+.cred-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px;}
+.cred-card{padding:28px;border-radius:18px;border:1px solid var(--sand);background:var(--white);transition:all .2s var(--ease);}
+.cred-card:hover{border-color:var(--mauve-lt);transform:translateY(-2px);}
+.cred-mark{width:36px;height:36px;border-radius:10px;background:var(--parchment);border:1px solid var(--sand);display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+.cred-h{font-family:var(--ff-d);font-size:20px;font-weight:600;color:var(--warm-dk);margin-bottom:10px;}
+.cred-p{font-size:13.5px;color:var(--warm-mid);line-height:1.75;font-weight:300;}
+.evidence-section{background:var(--parchment);}
+.evidence-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:48px;}
+.evidence-item{background:var(--white);border-radius:16px;padding:28px;border:1px solid var(--sand);}
+.ev-label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mauve);margin-bottom:8px;}
+.ev-h{font-family:var(--ff-d);font-size:19px;font-weight:600;color:var(--warm-dk);margin-bottom:10px;}
+.ev-p{font-size:13.5px;color:var(--warm-mid);line-height:1.75;font-weight:300;}
+.pathway-section{}
+.pathway-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px;}
+.pathway-card{border-radius:20px;padding:36px;border:1.5px solid var(--sand);}
+.pathway-card.vaginal{background:var(--sage-lt);}
+.pathway-card.csection{background:var(--terra-lt);}
+.pw-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:16px;}
+.pathway-card.vaginal .pw-badge{background:var(--sage-dk);color:white;}
+.pathway-card.csection .pw-badge{background:var(--terra);color:white;}
+.pw-h{font-family:var(--ff-d);font-size:26px;font-weight:600;color:var(--warm-dk);margin-bottom:14px;}
+.pw-phase{margin-bottom:16px;}
+.pw-phase-label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--warm-mid);margin-bottom:4px;}
+.pw-phase-h{font-size:15px;font-weight:600;color:var(--warm-dk);margin-bottom:4px;}
+.pw-phase-p{font-size:13px;color:var(--warm-mid);line-height:1.65;font-weight:300;}
+.pw-divider{height:1px;background:var(--sand);margin:14px 0;}
+.review-banner{background:var(--warm-dk);border-radius:20px;padding:40px;display:flex;align-items:center;gap:40px;margin-top:52px;}
+.rb-mark{width:52px;height:52px;border-radius:14px;background:rgba(255,202,212,.1);border:1px solid rgba(255,202,212,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.rb-h{font-family:var(--ff-d);font-size:22px;font-weight:600;color:var(--cream);margin-bottom:8px;}
+.rb-p{font-size:14px;color:rgba(255,202,212,.6);line-height:1.65;font-weight:300;}
+.back-link{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--mauve);transition:color .2s;margin-top:32px;}
+.back-link:hover{color:var(--mauve-dk);}
+@media(max-width:900px){.cred-grid{grid-template-columns:1fr 1fr;}.evidence-grid{grid-template-columns:1fr;}.pathway-grid{grid-template-columns:1fr;}.review-banner{flex-direction:column;gap:20px;}}
+@media(max-width:600px){.cred-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Mama<span>Flow</span></a>
+    <div class="nav-links"><a href="index.html#how-it-works" class="">How It Works</a>
+<a href="science.html" class="active">The Science</a>
+<a href="index.html#pricing" class="">Pricing</a>
+<a href="faq.html" class="">FAQs</a></div>
+    <div class="nav-cta"><a href="index.html#waitlist" class="btn btn-primary">Join Waitlist</a></div>
+    <div class="nav-hamburger" onclick="toggleMobileMenu()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>The Science</div>
+    <div class="eyebrow fade-up d1">The Science</div>
+    <h1 class="h1 fade-up d2">Built on clinical evidence.<br><em>Not assumptions.</em></h1>
+    <p class="lead fade-up d3">MamaFlow's framework is grounded in published postpartum guidelines — and designed to address the gaps mainstream apps ignore entirely.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="eyebrow reveal">Core Principles</div>
+    <h2 class="h2 reveal">Seven things that make<br><em>MamaFlow different.</em></h2>
+    <div class="cred-grid">
+      <div class="cred-card reveal">
+        <div class="cred-mark"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#9D8189" stroke-width="1.5"/><path d="M5 8l2.2 2.2L11 5.8" stroke="#9D8189" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="cred-h">RCOG &amp; ACOG Guidelines</div>
+        <p class="cred-p">Exercise phases built on Royal College of Obstetricians and ACOG evidence. Vaginal and C-section pathways are completely separate — because they are medically different recoveries. No other consumer app does this.</p>
+      </div>
+      <div class="cred-card reveal">
+        <div class="cred-mark"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#9D8189" stroke-width="1.5"/><path d="M5 8l2.2 2.2L11 5.8" stroke="#9D8189" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="cred-h">Mifflin-St Jeor Personalisation</div>
+        <p class="cred-p">Calorie targets calculated from your actual height, weight, and age using the most validated formula for postpartum women — adjusted daily for sleep deprivation, breastfeeding status, and training intensity.</p>
+      </div>
+      <div class="cred-card reveal">
+        <div class="cred-mark"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#9D8189" stroke-width="1.5"/><path d="M5 8l2.2 2.2L11 5.8" stroke="#9D8189" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="cred-h">Breastfeeding Safety Built In</div>
+        <p class="cred-p">Breastfeeding users never see a calorie deficit recommendation. An additional 400–500 kcal is applied automatically. Calorie restriction while breastfeeding is structurally prevented — not just discouraged.</p>
+      </div>
+      <div class="cred-card reveal">
+        <div class="cred-mark"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#9D8189" stroke-width="1.5"/><path d="M5 8l2.2 2.2L11 5.8" stroke="#9D8189" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="cred-h">Ethnicity-Aware Modelling</div>
+        <p class="cred-p">Standard equations were built from studies of White European populations. MamaFlow applies evidence-based BMR adjustments for Black and South Asian women — the first postpartum app to address this gap directly.</p>
+      </div>
+      <div class="cred-card reveal">
+        <div class="cred-mark"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#9D8189" stroke-width="1.5"/><path d="M5 8l2.2 2.2L11 5.8" stroke="#9D8189" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="cred-h">Postpartum Nutrition Phase-Specific</div>
+        <p class="cred-p">Iron, protein, calcium, and iodine targets change by phase — higher in early recovery, adjusted for breastfeeding, recalibrated as you progress. Every food suggestion is mapped to what your body actually needs at that stage.</p>
+      </div>
+      <div class="cred-card reveal">
+        <div class="cred-mark"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#9D8189" stroke-width="1.5"/><path d="M5 8l2.2 2.2L11 5.8" stroke="#9D8189" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="cred-h">Diastasis Recti Aware</div>
+        <p class="cred-p">The programme avoids exercises contraindicated for diastasis recti — crunches, sit-ups, double-leg raises, loaded trunk flexion. The core reconnection pathway focuses on evidence-based DR rehabilitation from day one.</p>
+      </div>
+      <div class="cred-card reveal">
+        <div class="cred-mark"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#9D8189" stroke-width="1.5"/><path d="M5 8l2.2 2.2L11 5.8" stroke="#9D8189" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="cred-h">Under Clinical Review</div>
+        <p class="cred-p">The MamaFlow clinical framework is being reviewed by a registered women's health physiotherapist before public launch. We will not launch until it is signed off. A full clinical briefing document has been prepared.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section evidence-section">
+  <div class="container">
+    <div class="eyebrow reveal">The Evidence</div>
+    <h2 class="h2 reveal">Where every decision<br><em>comes from.</em></h2>
+    <p class="lead reveal" style="max-width:560px;">Every clinical decision in MamaFlow traces back to published evidence. This is not a wellness app built on assumptions.</p>
+    <div class="evidence-grid">
+      <div class="evidence-item reveal">
+        <div class="ev-label">Exercise Framework</div>
+        <div class="ev-h">RCOG, ACOG &amp; POGP Guidelines</div>
+        <p class="ev-p">The Royal College of Obstetricians and Gynaecologists postpartum guidelines, the ACOG 2020 Committee Opinion on physical activity postpartum, and the POGP guidance on returning to running after childbirth form the core of MamaFlow's exercise phasing and clearance logic.</p>
+      </div>
+      <div class="evidence-item reveal">
+        <div class="ev-label">Calorie Calculation</div>
+        <div class="ev-h">Mifflin-St Jeor Equation</div>
+        <p class="ev-p">Selected over Harris-Benedict based on published accuracy studies (Frankenfield et al., 2005). Applied with postpartum-specific adjustments: sleep deprivation correction of up to +220 kcal, breastfeeding addition of 400–500 kcal, and daily activity multiplier.</p>
+      </div>
+      <div class="evidence-item reveal">
+        <div class="ev-label">Core Rehabilitation</div>
+        <div class="ev-h">Diastasis Recti Evidence Base</div>
+        <p class="ev-p">Core reconnection protocols drawn from Mota et al. and Lee &amp; Hodges on diastasis recti rehabilitation — prioritising transverse abdominis activation, pelvic floor coordination, and breathing mechanics before any loaded movement is introduced.</p>
+      </div>
+      <div class="evidence-item reveal">
+        <div class="ev-label">Breastfeeding Nutrition</div>
+        <div class="ev-h">Lovelady, McCrory &amp; WHO Evidence</div>
+        <p class="ev-p">Calorie restriction during breastfeeding is disabled based on Lovelady et al. (2000) and McCrory et al. (1999) findings on milk supply and maternal recovery. WHO supplementary feeding guidance informs the combination-feeding adjustment of +200–250 kcal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section pathway-section">
+  <div class="container">
+    <div class="eyebrow reveal">The Pathways</div>
+    <h2 class="h2 reveal">Two deliveries.<br><em>Two completely different recoveries.</em></h2>
+    <p class="lead reveal" style="max-width:560px;">This is the most important clinical distinction MamaFlow makes. A caesarean is major abdominal surgery through seven layers of tissue. The recovery is not a variation of vaginal birth — it is a different medical event entirely.</p>
+    <div class="pathway-grid">
+      <div class="pathway-card vaginal reveal">
+        <div class="pw-badge">Vaginal Birth</div>
+        <div class="pw-h">Perineal &amp; Pelvic<br>Recovery</div>
+        <div class="pw-phase">
+          <div class="pw-phase-label">Weeks 1–6</div>
+          <div class="pw-phase-h">Rest, breathwork, pelvic floor activation</div>
+          <p class="pw-phase-p">No impact. No sustained standing. Pelvic floor assessment built into onboarding. Perineal healing tracked through symptom check-ins.</p>
+        </div>
+        <div class="pw-divider"></div>
+        <div class="pw-phase">
+          <div class="pw-phase-label">Weeks 6–12</div>
+          <div class="pw-phase-h">Low-impact reintroduction</div>
+          <p class="pw-phase-p">Walking, mobility, gentle strength. Progression gated by symptom absence — not calendar date. Return to impact only after pelvic floor loading assessment.</p>
+        </div>
+        <div class="pw-divider"></div>
+        <div class="pw-phase">
+          <div class="pw-phase-label">Month 3+</div>
+          <div class="pw-phase-h">Progressive load &amp; strength building</div>
+          <p class="pw-phase-p">Full strength programme with progressive overload. Return to running pathway (POGP guidelines) from month 3 minimum, subject to symptom clearance.</p>
+        </div>
+      </div>
+      <div class="pathway-card csection reveal">
+        <div class="pw-badge">Caesarean Section</div>
+        <div class="pw-h">Abdominal Surgical<br>Recovery</div>
+        <div class="pw-phase">
+          <div class="pw-phase-label">Weeks 1–6</div>
+          <div class="pw-phase-h">Surgical healing — strict restrictions</div>
+          <p class="pw-phase-p">No trunk rotation. No lifting beyond infant weight. No sustained standing exercise. Breathing mechanics and wound awareness from day one. Scar tissue education begins.</p>
+        </div>
+        <div class="pw-divider"></div>
+        <div class="pw-phase">
+          <div class="pw-phase-label">Weeks 6–12</div>
+          <div class="pw-phase-h">Scar mobilisation &amp; deep core reactivation</div>
+          <p class="pw-phase-p">Scar tissue desensitisation exercises. Deep abdominal wall reactivation. No surface abdominal exercises until scar and fascia are cleared. Lower body strength begins.</p>
+        </div>
+        <div class="pw-divider"></div>
+        <div class="pw-phase">
+          <div class="pw-phase-label">Month 3+</div>
+          <div class="pw-phase-h">Full programme with scar-aware loading</div>
+          <p class="pw-phase-p">Progressive strength with ongoing scar awareness. Return to impact later than vaginal pathway — typically 4–6 months minimum. All loading decisions consider lower abdominal wall integrity.</p>
+        </div>
+      </div>
+    </div>
+    <div class="review-banner reveal">
+      <div class="rb-mark">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#FFCAD4" stroke-width="1.5"/><path d="M8 12l3 3 5-5" stroke="#FFCAD4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <div class="rb-h">Under Clinical Review</div>
+        <p class="rb-p">The complete MamaFlow clinical framework — exercise phasing, nutritional calculations, pathway gating, and contraindication logic — is being reviewed by a registered women's health physiotherapist before public launch. MamaFlow will not launch until the framework is formally signed off. A clinical briefing document is available for endorsement review.</p>
+      </div>
+    </div>
+    <a href="index.html" class="back-link reveal">← Back to homepage</a>
+  </div>
+</section>
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">MamaFlow</div>
+      <div class="footer-tagline">AI-powered postpartum fitness built around your real life — not someone else's perfect day.</div>
+    </div>
+    <div class="footer-col"><h4>Product</h4><ul>
+      <li><a href="index.html#how-it-works">How It Works</a></li>
+      <li><a href="science.html">The Science</a></li>
+      <li><a href="index.html#pricing">Pricing</a></li>
+      <li><a href="faq.html">FAQs</a></li>
+      <li><a href="index.html#waitlist">Join the Waitlist</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Legal &amp; Contact</h4><ul>
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Terms of Service</a></li>
+      <li><a href="#">Cookie Policy</a></li>
+      <li><a href="mailto:hi@mamaflow.io">hi@mamaflow.io</a></li>
+      <li><a href="https://instagram.com/mamaflow.io" target="_blank" rel="noopener">@mamaflow.io on Instagram</a></li>
+      <li><a href="https://tiktok.com/@tendieex" target="_blank" rel="noopener">@tendieex on TikTok</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 MamaFlow Ltd. Registered in England &amp; Wales. ICO registered.</div>
+    <div class="footer-social">
+      <a href="https://instagram.com/mamaflow.io" target="_blank">Instagram</a>
+      <a href="https://tiktok.com/@mamaflow.io" target="_blank">TikTok</a>
+      <a href="https://tiktok.com/@tendieex" target="_blank">@tendieex</a>
+    </div>
+  </div>
+</footer>
+<div class="toast-global" id="toastGlobal"></div><script>
+window.addEventListener('scroll',()=>{document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>30);});
+const ro=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}});},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+let signupCount=1247;
+function joinWaitlist(iId,fId){
+  const el=document.getElementById(iId),val=el.value.trim();
+  if(!val||!val.includes('@')){el.style.borderColor='#e57373';el.placeholder='Please enter a valid email';setTimeout(()=>{el.style.borderColor='';el.placeholder='Your email address';},2000);return;}
+  const btn=document.querySelector('#'+fId+' .email-submit');
+  btn.textContent='✓ You\'re on the list!';btn.classList.add('success');
+  el.value='';el.placeholder='You\'re in!';el.disabled=true;
+  signupCount++;document.querySelectorAll('.waitlist-count').forEach(e=>e.textContent=signupCount.toLocaleString()+' mums');
+  showToast('Welcome to MamaFlow — check your inbox for a confirmation.');
+}
+function showToast(msg){const t=document.getElementById('toastGlobal');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),4000);}
+function scrollToWaitlist(){const el=document.getElementById('waitlist');if(el)el.scrollIntoView({behavior:'smooth'});else window.location='index.html#waitlist';}
+function toggleMobileMenu(){showToast('Use the links above or below to navigate.');}
+</script>
+</body>
+</html>
