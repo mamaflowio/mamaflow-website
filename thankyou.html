@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You're on the list — MamaFlow</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --terra:#C4856A;--terra-lt:#F5E8E2;
+  --mauve:#9D8189;--mauve-dk:#7A5F65;
+  --sage:#B8CCBA;--sage-dk:#8FAF8A;--sage-lt:#E8F2EB;
+  --cream:#FAF7F4;--parchment:#F2EDE8;--sand:#E8DEDA;
+  --warm-dk:#2C1F1A;--warm-mid:#6B4846;--warm-lt:#A08880;
+  --blush:#FFCAD4;
+  --ff-d:'Cormorant Garamond',Georgia,serif;
+  --ff-b:'Figtree',system-ui,sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{font-size:16px;}
+body{font-family:var(--ff-b);background:var(--cream);color:var(--warm-dk);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+
+.card{background:white;border-radius:24px;padding:56px 48px;max-width:520px;width:100%;text-align:center;box-shadow:0 8px 48px rgba(44,31,26,.08);border:1px solid var(--sand);}
+
+.icon-wrap{width:72px;height:72px;border-radius:50%;background:var(--sage-lt);border:2px solid var(--sage-dk);display:flex;align-items:center;justify-content:center;margin:0 auto 28px;}
+.icon-wrap svg{width:32px;height:32px;}
+
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mauve);margin-bottom:14px;}
+.eyebrow::before{content:'';display:inline-block;width:16px;height:1px;background:var(--mauve);vertical-align:middle;margin-right:8px;}
+.eyebrow::after{content:'';display:inline-block;width:16px;height:1px;background:var(--mauve);vertical-align:middle;margin-left:8px;}
+
+h1{font-family:var(--ff-d);font-size:40px;font-weight:300;font-style:italic;color:var(--warm-dk);line-height:1.15;margin-bottom:16px;}
+h1 em{font-style:normal;color:var(--terra);}
+
+.lead{font-size:15px;font-weight:300;color:var(--warm-mid);line-height:1.75;margin-bottom:32px;}
+.lead strong{color:var(--warm-dk);font-weight:600;}
+
+.divider{height:1px;background:var(--sand);margin:28px 0;}
+
+.steps{text-align:left;display:flex;flex-direction:column;gap:16px;margin-bottom:32px;}
+.step-item{display:flex;gap:14px;align-items:flex-start;}
+.step-dot{width:24px;height:24px;border-radius:50%;background:var(--terra-lt);border:1.5px solid var(--terra);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--terra);margin-top:2px;}
+.step-text{font-size:13.5px;color:var(--warm-mid);line-height:1.6;font-weight:300;}
+.step-text strong{color:var(--warm-dk);font-weight:600;}
+
+.back-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:100px;background:var(--warm-dk);color:var(--cream);font-family:var(--ff-b);font-size:13px;font-weight:600;letter-spacing:.04em;transition:background .25s var(--ease);border:none;cursor:pointer;}
+.back-btn:hover{background:var(--mauve-dk);}
+
+.footer-note{margin-top:24px;font-size:12px;color:var(--warm-lt);}
+.footer-note a{color:var(--mauve);font-weight:500;}
+
+.logo{font-family:var(--ff-d);font-size:18px;font-weight:600;color:var(--warm-dk);letter-spacing:.04em;margin-bottom:40px;}
+.logo span{color:var(--mauve);font-style:italic;}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.card{animation:fadeUp .6s var(--ease) both;}
+</style>
+</head>
+<body>
+
+<div class="logo">Mama<span>Flow</span></div>
+
+<div class="card">
+
+  <div class="icon-wrap">
+    <svg viewBox="0 0 32 32" fill="none">
+      <circle cx="16" cy="16" r="14" stroke="#8FAF8A" stroke-width="1.5"/>
+      <path d="M10 16l4.5 4.5L22 11" stroke="#8FAF8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+
+  <div class="eyebrow">You're almost in</div>
+
+  <h1>Check your<br><em>inbox.</em></h1>
+
+  <p class="lead">We've sent a confirmation email to your inbox. <strong>Click the button in that email</strong> to confirm your spot on the MamaFlow waitlist.</p>
+
+  <div class="divider"></div>
+
+  <div class="steps">
+    <div class="step-item">
+      <div class="step-dot">1</div>
+      <div class="step-text"><strong>Open the email</strong> from Tendai at MamaFlow — check your spam if you don't see it within a few minutes</div>
+    </div>
+    <div class="step-item">
+      <div class="step-dot">2</div>
+      <div class="step-text"><strong>Click "Yes, confirm my spot"</strong> to officially join the waitlist and secure your place</div>
+    </div>
+    <div class="step-item">
+      <div class="step-dot">3</div>
+      <div class="step-text"><strong>You're in.</strong> You'll hear from us when we launch — and if you're in the first 100, your founding price is locked for 24 months</div>
+    </div>
+  </div>
+
+  <a href="index.html" class="back-btn">← Back to MamaFlow</a>
+
+  <p class="footer-note">Didn't receive the email? <a href="mailto:hi@mamaflow.io">Email us</a> and we'll sort it.</p>
+
+</div>
+
+</body>
+</html>
