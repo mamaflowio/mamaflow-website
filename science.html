@@ -337,15 +337,7 @@ window.addEventListener('scroll',()=>{document.getElementById('mainNav').classLi
 const ro=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}});},{threshold:0.12});
 document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
 let signupCount=1247;
-function joinWaitlist(iId,fId){
-  const el=document.getElementById(iId),val=el.value.trim();
-  if(!val||!val.includes('@')){el.style.borderColor='#e57373';el.placeholder='Please enter a valid email';setTimeout(()=>{el.style.borderColor='';el.placeholder='Your email address';},2000);return;}
-  const btn=document.querySelector('#'+fId+' .email-submit');
-  btn.textContent='✓ You\'re on the list!';btn.classList.add('success');
-  el.value='';el.placeholder='You\'re in!';el.disabled=true;
-  signupCount++;document.querySelectorAll('.waitlist-count').forEach(e=>e.textContent=signupCount.toLocaleString()+' mums');
-  showToast('Welcome to MamaFlow — check your inbox for a confirmation.');
-}
+
 function showToast(msg){const t=document.getElementById('toastGlobal');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),4000);}
 function scrollToWaitlist(){const el=document.getElementById('waitlist');if(el)el.scrollIntoView({behavior:'smooth'});else window.location='index.html#waitlist';}
 function closeMobileMenu(){const m=document.getElementById("mobileMenu");if(m)m.classList.remove("open");}
@@ -359,5 +351,22 @@ document.addEventListener('click',function(e){
   }
 });
 </script>
+<link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+<style>
+.sib-form-message-panel{display:none !important;}
+.sib-form-message-panel.shown{display:block !important;}
+#sib-container,#sib-form-container,.sib-form{all:unset;}
+</style>
+<script>
+window.REQUIRED_CODE_ERROR_MESSAGE='Please choose a country code';
+window.LOCALE='en';
+window.EMAIL_INVALID_MESSAGE='Please enter a valid email address.';
+window.REQUIRED_ERROR_MESSAGE='Please enter your email address to join the waitlist.';
+window.GENERIC_INVALID_MESSAGE='Please enter a valid email address.';
+window.INVALID_DATE='Please enter a valid date';
+window.REQUIRED_MULTISELECT_MESSAGE='Please select at least 1 option';
+var AUTOHIDE=Boolean(0);
+</script>
+<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 </body>
 </html>

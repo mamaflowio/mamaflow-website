@@ -296,6 +296,7 @@ img{max-width:100%;display:block;}a{text-decoration:none;color:inherit;}
 window.addEventListener('scroll',()=>{document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>30);});
 const ro=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}});},{threshold:0.12});
 document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+
 function showToast(msg){const t=document.getElementById('toastGlobal');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),4000);}
 function scrollToWaitlist(){window.location='index.html#waitlist';}
 function closeMobileMenu(){const m=document.getElementById("mobileMenu");if(m)m.classList.remove("open");}
@@ -304,5 +305,22 @@ function toggleFaq(el){const item=el.closest('.faq-item');const wasOpen=item.cla
 function filterFaq(cat,btn){document.querySelectorAll('.faq-cat-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.faq-item').forEach(item=>{item.style.display=(item.dataset.cat===cat)?'':'none';item.classList.remove('open');});}
 document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('.faq-item').forEach(item=>{item.style.display=item.dataset.cat==='app'?'':'none';});});
 </script>
+<link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+<style>
+.sib-form-message-panel{display:none !important;}
+.sib-form-message-panel.shown{display:block !important;}
+#sib-container,#sib-form-container,.sib-form{all:unset;}
+</style>
+<script>
+window.REQUIRED_CODE_ERROR_MESSAGE='Please choose a country code';
+window.LOCALE='en';
+window.EMAIL_INVALID_MESSAGE='Please enter a valid email address.';
+window.REQUIRED_ERROR_MESSAGE='Please enter your email address to join the waitlist.';
+window.GENERIC_INVALID_MESSAGE='Please enter a valid email address.';
+window.INVALID_DATE='Please enter a valid date';
+window.REQUIRED_MULTISELECT_MESSAGE='Please select at least 1 option';
+var AUTOHIDE=Boolean(0);
+</script>
+<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 </body>
 </html>
