@@ -157,21 +157,22 @@ img{max-width:100%;display:block;}a{text-decoration:none;color:inherit;}
 <nav class="nav" id="mainNav">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">Mama<span>Flow</span></a>
-    <div class="nav-links"><a href="index.html#how-it-works" class="">How It Works</a>
-<a href="science.html" class="active">The Science</a>
-<a href="index.html#pricing" class="">Pricing</a>
-<a href="faq.html" class="">FAQs</a></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="our-story.html">Our Story</a>
+      <a href="science.html" class="active">The Science</a>
+      <a href="faq.html">FAQs</a>
+    </div>
     <div class="nav-cta"><a href="index.html#waitlist" class="btn btn-primary">Join Waitlist</a></div>
     <div class="nav-hamburger" onclick="toggleMobileMenu()"><span></span><span></span><span></span></div>
   </div>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="index.html#how-it-works" onclick="closeMobileMenu()">How It Works</a>
+  <a href="index.html" onclick="closeMobileMenu()">Home</a>
   <a href="our-story.html" onclick="closeMobileMenu()">Our Story</a>
   <a href="science.html" onclick="closeMobileMenu()">The Science</a>
-  <a href="index.html#pricing" onclick="closeMobileMenu()">Pricing</a>
   <a href="faq.html" onclick="closeMobileMenu()">FAQs</a>
-  <a href="index.html#waitlist" onclick="closeMobileMenu()" style="color:var(--mauve);font-weight:600;">Join Waitlist →</a>
+  <a href="index.html#waitlist" onclick="closeMobileMenu()" style="color:var(--terra);font-weight:600;">Join Waitlist →</a>
 </div>
 
 <section class="page-hero">
@@ -319,7 +320,7 @@ img{max-width:100%;display:block;}a{text-decoration:none;color:inherit;}
       <div class="footer-tagline">AI-powered postpartum fitness built around your real life — not someone else's perfect day.</div>
     </div>
     <div class="footer-col"><h4>Product</h4><ul>
-      <li><a href="index.html#how-it-works">How It Works</a></li>
+      <li><a href="index.html">Home</a></li>
       <li><a href="our-story.html">Our Story</a></li>
       <li><a href="science.html">The Science</a></li>
       <li><a href="index.html#pricing">Pricing</a></li>
@@ -344,6 +345,26 @@ img{max-width:100%;display:block;}a{text-decoration:none;color:inherit;}
     </div>
   </div>
 </footer>
+<div class="mobile-bottom-nav">
+  <div class="mobile-bottom-nav-inner">
+    <a href="index.html" class="mbn-item">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="9 22 9 12 15 12 15 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Home</span>
+    </a>
+    <a href="our-story.html" class="mbn-item">
+      <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <span>Our Story</span>
+    </a>
+    <a href="science.html" class="mbn-item active">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Science</span>
+    </a>
+    <a href="faq.html" class="mbn-item">
+      <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="12" y1="17" x2="12.01" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <span>FAQs</span>
+    </a>
+  </div>
+</div>
 <div class="toast-global" id="toastGlobal"></div><script>
 window.addEventListener('scroll',()=>{document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>30);});
 const ro=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}});},{threshold:0.12});

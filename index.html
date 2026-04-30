@@ -105,10 +105,10 @@ img{max-width:100%;display:block;}a{text-decoration:none;color:inherit;}
 .mbn-item.cta span{color:var(--cream);}
 @media(max-width:768px){.mobile-bottom-nav{display:block;}.section{padding-bottom:calc(72px + env(safe-area-inset-bottom));}}
 
-.scroll-indicator{display:flex;flex-direction:column;align-items:flex-start;gap:6px;margin-top:24px;cursor:pointer;opacity:0.6;transition:opacity .2s;animation:fadeUp .65s .6s both;}
+.scroll-indicator{display:inline-flex;flex-direction:column;align-items:center;gap:6px;margin-top:24px;cursor:pointer;opacity:1;transition:opacity .2s;}
 .scroll-indicator:hover{opacity:0.8;}
-.scroll-indicator span{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(250,247,244,.7);}
-.scroll-arrow{width:20px;height:20px;animation:scrollBounce 1.8s ease-in-out infinite;}
+.scroll-indicator span{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#C4A8AE;}
+.scroll-arrow{width:20px;height:20px;display:block;animation:scrollBounce 1.8s ease-in-out infinite;}
 @keyframes scrollBounce{0%,100%{transform:translateY(0);}50%{transform:translateY(5px);}}
 </style>
 <style>
@@ -252,22 +252,23 @@ img{max-width:100%;display:block;}a{text-decoration:none;color:inherit;}
 <body>
 <nav class="nav" id="mainNav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">Mama<span>Flow</span></a>
-    <div class="nav-links"><a href="index.html#how-it-works" class="active">How It Works</a>
-<a href="science.html" class="">The Science</a>
-<a href="index.html#pricing" class="active">Pricing</a>
-<a href="faq.html" class="">FAQs</a></div>
+    <a href="index.html" class="active" class="nav-logo">Mama<span>Flow</span></a>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="our-story.html">Our Story</a>
+      <a href="science.html">The Science</a>
+      <a href="faq.html">FAQs</a>
+    </div>
     <div class="nav-cta"><a href="index.html#waitlist" class="btn btn-primary">Join Waitlist</a></div>
     <div class="nav-hamburger" onclick="toggleMobileMenu()"><span></span><span></span><span></span></div>
   </div>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="index.html#how-it-works" onclick="closeMobileMenu()">How It Works</a>
+  <a href="index.html" onclick="closeMobileMenu()">Home</a>
   <a href="our-story.html" onclick="closeMobileMenu()">Our Story</a>
   <a href="science.html" onclick="closeMobileMenu()">The Science</a>
-  <a href="index.html#pricing" onclick="closeMobileMenu()">Pricing</a>
   <a href="faq.html" onclick="closeMobileMenu()">FAQs</a>
-  <a href="index.html#waitlist" onclick="closeMobileMenu()" style="color:var(--mauve);font-weight:600;">Join Waitlist →</a>
+  <a href="index.html#waitlist" onclick="closeMobileMenu()" style="color:var(--terra);font-weight:600;">Join Waitlist →</a>
 </div>
 
 <!-- HERO -->
@@ -306,7 +307,7 @@ img{max-width:100%;display:block;}a{text-decoration:none;color:inherit;}
         </div>
         <div class="scroll-indicator" onclick="document.getElementById('problem').scrollIntoView({behavior:'smooth'})">
           <span>See how it works</span>
-          <svg class="scroll-arrow" viewBox="0 0 20 20" fill="none"><path d="M10 4v12M5 11l5 5 5-5" stroke="rgba(250,247,244,0.7)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="scroll-arrow" viewBox="0 0 20 20" fill="none" style="display:block;"><path d="M10 4v12M5 11l5 5 5-5" stroke="#C4A8AE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
       </div>
       <div class="hero-visual fade-up d3">
@@ -603,7 +604,7 @@ img{max-width:100%;display:block;}a{text-decoration:none;color:inherit;}
       <div class="footer-tagline">AI-powered postpartum fitness built around your real life — not someone else's perfect day.</div>
     </div>
     <div class="footer-col"><h4>Product</h4><ul>
-      <li><a href="index.html#how-it-works">How It Works</a></li>
+      <li><a href="index.html">Home</a></li>
       <li><a href="our-story.html">Our Story</a></li>
       <li><a href="science.html">The Science</a></li>
       <li><a href="index.html#pricing">Pricing</a></li>
