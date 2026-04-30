@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You're confirmed — MamaFlow</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --terra:#C4856A;--terra-lt:#F5E8E2;
+  --mauve:#9D8189;--mauve-dk:#7A5F65;--mauve-lt:#C4A8AE;
+  --sage:#B8CCBA;--sage-dk:#8FAF8A;--sage-lt:#E8F2EB;
+  --cream:#FAF7F4;--parchment:#F2EDE8;--sand:#E8DEDA;
+  --warm-dk:#2C1F1A;--warm-mid:#6B4846;--warm-lt:#A08880;
+  --blush:#FFCAD4;--pink:#F4ACB7;
+  --ff-d:'Cormorant Garamond',Georgia,serif;
+  --ff-b:'Figtree',system-ui,sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{font-family:var(--ff-b);background:var(--cream);color:var(--warm-dk);overflow-x:hidden;-webkit-font-smoothing:antialiased;padding-bottom:80px;}
+img{max-width:100%;display:block;}
+a{text-decoration:none;color:inherit;}
+.container{max-width:1120px;margin:0 auto;padding:0 32px;}
+.section{padding:80px 0;}
+.section-alt{background:var(--parchment);}
+.section-dark{background:var(--warm-dk);}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mauve);margin-bottom:16px;}
+.eyebrow::before{content:'';width:20px;height:1px;background:var(--mauve);}
+.h1{font-family:var(--ff-d);font-size:clamp(38px,5.5vw,72px);font-weight:300;line-height:1.06;}
+.h1 em{font-style:italic;color:var(--mauve);}
+.h2{font-family:var(--ff-d);font-size:clamp(28px,3.5vw,52px);font-weight:300;line-height:1.1;}
+.h2 em{font-style:italic;color:var(--mauve);}
+.lead{font-size:17px;font-weight:300;color:var(--warm-mid);line-height:1.75;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:100px;font-family:var(--ff-b);font-size:13px;font-weight:600;letter-spacing:.05em;border:none;cursor:pointer;transition:all .25s var(--ease);}
+.btn-primary{background:var(--warm-dk);color:var(--cream);}
+.btn-primary:hover{background:var(--mauve-dk);}
+.btn-ghost{background:transparent;color:var(--warm-dk);border:1.5px solid var(--sand);}
+.btn-ghost:hover{border-color:var(--mauve);}
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(250,247,244,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(232,222,218,.5);}
+.nav-inner{max-width:1120px;margin:0 auto;padding:0 32px;height:68px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-family:var(--ff-d);font-size:22px;font-weight:600;color:var(--warm-dk);letter-spacing:.04em;}
+.nav-logo span{color:var(--mauve);font-style:italic;}
+.nav-links{display:flex;gap:32px;}
+.nav-links a{font-size:13px;font-weight:500;color:var(--warm-mid);transition:color .2s;}
+.nav-links a:hover{color:var(--warm-dk);}
+.nav-cta .btn{background:var(--sage-dk);color:white;}
+.nav-cta .btn:hover{background:var(--sage);}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
+.nav-hamburger span{width:22px;height:1.5px;background:var(--warm-dk);}
+/* MOBILE MENU */
+.mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;background:rgba(250,247,244,.98);backdrop-filter:blur(16px);border-bottom:1px solid rgba(232,222,218,.5);padding:20px 32px;z-index:998;flex-direction:column;gap:0;}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{font-size:15px;font-weight:500;color:var(--warm-mid);padding:14px 0;border-bottom:1px solid var(--sand);}
+.mobile-menu a:last-child{border-bottom:none;}
+@media(min-width:769px){.mobile-menu{display:none !important;}}
+/* CONFIRMATION HERO */
+.confirm-hero{padding:140px 0 80px;background:var(--warm-dk);position:relative;overflow:hidden;text-align:center;}
+.confirm-hero::before{content:'';position:absolute;left:50%;top:-100px;transform:translateX(-50%);width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(255,202,212,.12),transparent 65%);pointer-events:none;}
+.confirm-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(143,175,138,.15);border:1px solid rgba(143,175,138,.3);border-radius:100px;padding:8px 20px;margin-bottom:28px;}
+.confirm-badge-dot{width:8px;height:8px;border-radius:50%;background:var(--sage-dk);}
+.confirm-badge-text{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--sage-dk);}
+.confirm-hero .h1{color:var(--cream);margin-bottom:16px;}
+.confirm-hero .h1 em{color:var(--blush);}
+.confirm-hero .lead{color:rgba(255,202,212,.65);max-width:520px;margin:0 auto 36px;}
+.social-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.social-btn{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:100px;font-family:var(--ff-b);font-size:13px;font-weight:600;transition:all .2s;border:1.5px solid rgba(255,202,212,.2);color:rgba(255,202,212,.8);}
+.social-btn:hover{border-color:var(--blush);color:var(--blush);}
+.social-btn.personal{background:rgba(255,202,212,.08);}
+.social-btn.brand{background:rgba(196,133,106,.15);border-color:rgba(196,133,106,.3);color:var(--terra);}
+.social-btn.brand:hover{border-color:var(--terra);color:var(--terra);}
+/* PROBLEM SECTION */
+.problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px;}
+.problem-card{background:var(--white,#fff);border-radius:20px;padding:32px;border:1px solid var(--sand);position:relative;overflow:hidden;transition:transform .3s var(--ease);}
+.problem-card:hover{transform:translateY(-4px);}
+.problem-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:20px 20px 0 0;}
+.problem-card:nth-child(1)::before{background:var(--pink);}
+.problem-card:nth-child(2)::before{background:var(--sage-dk);}
+.problem-card:nth-child(3)::before{background:var(--terra);}
+.pc-emoji{font-size:32px;margin-bottom:16px;display:block;}
+.pc-h{font-family:var(--ff-d);font-size:22px;font-weight:600;color:var(--warm-dk);margin-bottom:10px;}
+.pc-p{font-size:14px;color:var(--warm-mid);line-height:1.7;font-weight:300;}
+/* HOW IT WORKS */
+.steps-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:60px;position:relative;}
+.steps-row::before{content:'';position:absolute;top:32px;left:calc(12.5% + 12px);right:calc(12.5% + 12px);height:1px;background:var(--sand);z-index:0;}
+.step{text-align:center;padding:0 16px;position:relative;z-index:1;}
+.step-num{width:64px;height:64px;border-radius:50%;background:var(--warm-dk);color:var(--cream);font-family:var(--ff-d);font-size:22px;font-weight:600;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;}
+.step-h{font-family:var(--ff-d);font-size:19px;font-weight:600;color:var(--warm-dk);margin-bottom:8px;}
+.step-p{font-size:13.5px;color:var(--warm-mid);line-height:1.65;font-weight:300;}
+/* EXPLORE CARDS */
+.explore-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:48px;}
+.explore-card{border-radius:20px;padding:36px;border:1.5px solid var(--sand);background:white;display:flex;flex-direction:column;gap:16px;transition:all .25s var(--ease);}
+.explore-card:hover{border-color:var(--mauve-lt);transform:translateY(-3px);box-shadow:0 12px 40px rgba(157,129,137,.1);}
+.explore-icon{width:48px;height:48px;border-radius:14px;background:var(--parchment);display:flex;align-items:center;justify-content:center;}
+.explore-icon svg{width:22px;height:22px;color:var(--mauve);}
+.explore-h{font-family:var(--ff-d);font-size:24px;font-weight:600;color:var(--warm-dk);}
+.explore-p{font-size:14px;color:var(--warm-mid);line-height:1.7;font-weight:300;flex:1;}
+.explore-link{font-size:13px;font-weight:600;color:var(--mauve);display:flex;align-items:center;gap:6px;}
+/* FOOTER */
+.footer{background:var(--warm-dk);padding:48px 0;}
+.footer-inner{max-width:1120px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px;}
+.footer-logo{font-family:var(--ff-d);font-size:22px;font-weight:600;color:var(--blush);margin-bottom:10px;}
+.footer-tagline{font-size:12.5px;color:rgba(255,202,212,.7);line-height:1.65;font-weight:300;}
+.footer-col h4{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,202,212,.85);margin-bottom:14px;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:9px;}
+.footer-col ul li a{font-size:13px;color:rgba(255,202,212,.72);transition:color .2s;font-weight:300;}
+.footer-col ul li a:hover{color:var(--blush);}
+.footer-bottom{max-width:1120px;margin:32px auto 0;padding:24px 32px 0;border-top:1px solid rgba(255,202,212,.08);display:flex;justify-content:space-between;align-items:center;}
+.footer-copy{font-size:12px;color:rgba(255,202,212,.6);}
+/* MOBILE BOTTOM NAV */
+.mobile-bottom-nav{display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(250,247,244,.97);backdrop-filter:blur(12px);border-top:1px solid var(--sand);padding:10px 0 max(10px,env(safe-area-inset-bottom));z-index:997;}
+.mobile-bottom-nav-inner{display:flex;justify-content:space-around;align-items:center;}
+.mbn-item{display:flex;flex-direction:column;align-items:center;gap:3px;padding:4px 12px;text-decoration:none;color:var(--warm-lt);min-width:64px;}
+.mbn-item.active{color:var(--warm-dk);}
+.mbn-item svg{width:20px;height:20px;}
+.mbn-item span{font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;}
+.mbn-item.cta{background:var(--sage-dk);border-radius:12px;color:white;padding:8px 14px;}
+.mbn-item.cta span{color:white;}
+@media(max-width:768px){
+  .mobile-bottom-nav{display:block;}
+  .section{padding-bottom:calc(72px + env(safe-area-inset-bottom));}
+  .problem-grid{grid-template-columns:1fr;}
+  .steps-row{grid-template-columns:1fr 1fr;}
+  .steps-row::before{display:none;}
+  .explore-grid{grid-template-columns:1fr;}
+  .footer-inner{grid-template-columns:1fr;gap:32px;}
+  .nav-links{display:none;}
+  .nav-hamburger{display:flex;}
+  .confirm-hero{padding:120px 0 60px;}
+}
+@media(max-width:600px){.container{padding:0 20px;}.steps-row{grid-template-columns:1fr;}}
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+.fade-up{animation:fadeUp .65s var(--ease) both;}
+.d1{animation-delay:.1s;}.d2{animation-delay:.2s;}.d3{animation-delay:.3s;}.d4{animation-delay:.4s;}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .6s var(--ease),transform .6s var(--ease);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.toast-global{position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--warm-dk);color:var(--cream);padding:14px 24px;border-radius:100px;font-size:13.5px;opacity:0;transition:all .4s var(--ease);pointer-events:none;z-index:9999;}
+.toast-global.show{opacity:1;transform:translateX(-50%) translateY(0);}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Mama<span>Flow</span></a>
+    <div class="nav-links">
+      <a href="index.html#how-it-works">How It Works</a>
+      <a href="science.html">The Science</a>
+      <a href="faq.html">FAQs</a>
+    </div>
+    <div class="nav-cta">
+      <a href="https://tiktok.com/@mamaflow.io" target="_blank" rel="noopener" class="btn">Follow @mamaflow.io</a>
+    </div>
+    <div class="nav-hamburger" onclick="toggleMobileMenu()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html#how-it-works" onclick="closeMobileMenu()">How It Works</a>
+  <a href="science.html" onclick="closeMobileMenu()">The Science</a>
+  <a href="faq.html" onclick="closeMobileMenu()">FAQs</a>
+  <a href="https://tiktok.com/@mamaflow.io" target="_blank" onclick="closeMobileMenu()" style="color:var(--terra);font-weight:600;">Follow @mamaflow.io →</a>
+</div>
+
+<!-- CONFIRMATION HERO -->
+<section class="confirm-hero">
+  <div class="container">
+    <div class="confirm-badge fade-up d1">
+      <div class="confirm-badge-dot"></div>
+      <div class="confirm-badge-text">You're confirmed</div>
+    </div>
+    <h1 class="h1 fade-up d2">You're in.<br><em>Welcome to MamaFlow.</em></h1>
+    <p class="lead fade-up d3">You'll hear from us when we launch. In the meantime — follow along as we build this, in real time, with zero filter.</p>
+    <div class="social-btns fade-up d4">
+      <a href="https://tiktok.com/@tendieex" target="_blank" rel="noopener" class="social-btn personal">TikTok @tendieex</a>
+      <a href="https://instagram.com/tendieex" target="_blank" rel="noopener" class="social-btn personal">Instagram @tendieex</a>
+      <a href="https://tiktok.com/@mamaflow.io" target="_blank" rel="noopener" class="social-btn brand">TikTok @mamaflow.io</a>
+      <a href="https://instagram.com/mamaflow.io" target="_blank" rel="noopener" class="social-btn brand">Instagram @mamaflow.io</a>
+    </div>
+  </div>
+</section>
+
+<!-- SOUND FAMILIAR -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="eyebrow reveal">Sound familiar?</div>
+    <h2 class="h2 reveal">Every app assumes<br>you had a <em>perfect day.</em></h2>
+    <p class="lead reveal" style="max-width:520px;margin-top:12px;">You didn't. And that's not your fault — it's theirs.</p>
+    <div class="problem-grid">
+      <div class="problem-card reveal">
+        <span class="pc-emoji">😴</span>
+        <h3 class="pc-h">You had 3 hours sleep</h3>
+        <p class="pc-p">But the app still says it's HIIT day. So you skip it. The guilt starts. The streak breaks. You stop opening the app.</p>
+      </div>
+      <div class="problem-card reveal">
+        <span class="pc-emoji">⏱️</span>
+        <h3 class="pc-h">You have 15 minutes</h3>
+        <p class="pc-p">The workout is 45. You do nothing instead. The app becomes another thing you're failing at. It shouldn't feel this way.</p>
+      </div>
+      <div class="problem-card reveal">
+        <span class="pc-emoji">🤷🏾‍♀️</span>
+        <h3 class="pc-h">You were cleared. Now what?</h3>
+        <p class="pc-p">The doctor said you're fine to exercise. But nobody told you what that actually means for your specific body, your delivery, your recovery.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="how-it-works">
+  <div class="container">
+    <div class="eyebrow reveal">The difference</div>
+    <h2 class="h2 reveal">We figure it out <em>for you.</em></h2>
+    <p class="lead reveal" style="max-width:480px;margin-top:12px;">90 seconds every morning. No decisions. No guilt. No guessing.</p>
+    <div class="steps-row">
+      <div class="step reveal">
+        <div class="step-num">1</div>
+        <div class="step-h">Morning Check-In</div>
+        <p class="step-p">Tell us how you slept and how you feel. Five taps. Under 90 seconds.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">2</div>
+        <div class="step-h">AI Reads Your Day</div>
+        <p class="step-p">The pivot engine builds a plan for exactly where you are right now.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">3</div>
+        <div class="step-h">Movement <em style="font-style:italic;">and</em> Food, Today</div>
+        <p class="step-p">A workout and food plan built around food you actually eat — not a clean-eating fantasy.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">4</div>
+        <div class="step-h">Progress Honestly</div>
+        <p class="step-p">Strength, energy, recovery — tracked without scales or shame. Your timeline.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPLORE MORE -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="eyebrow reveal">Keep exploring</div>
+    <h2 class="h2 reveal">Learn more while<br>you <em>wait.</em></h2>
+    <div class="explore-grid">
+      <a href="science.html" class="explore-card reveal">
+        <div class="explore-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+        </div>
+        <div class="explore-h">The Science</div>
+        <p class="explore-p">RCOG and ACOG guidelines. Separate caesarean and vaginal pathways. Ethnicity-aware modelling. Breastfeeding safety built in. Read the full clinical framework.</p>
+        <div class="explore-link">Read the science <span>→</span></div>
+      </a>
+      <a href="faq.html" class="explore-card reveal">
+        <div class="explore-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <div class="explore-h">FAQs</div>
+        <p class="explore-p">Honest answers about how the app works, what the clinical framework covers, how nutrition is calculated, and what founding member pricing actually means.</p>
+        <div class="explore-link">Read the FAQs <span>→</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">MamaFlow</div>
+      <div class="footer-tagline">AI-powered postpartum fitness built around your real life — not someone else's perfect day.</div>
+    </div>
+    <div class="footer-col"><h4>Product</h4><ul>
+      <li><a href="index.html#how-it-works">How It Works</a></li>
+      <li><a href="science.html">The Science</a></li>
+      <li><a href="faq.html">FAQs</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Follow Along</h4><ul>
+      <li><a href="https://tiktok.com/@tendieex" target="_blank">TikTok @tendieex</a></li>
+      <li><a href="https://instagram.com/tendieex" target="_blank">Instagram @tendieex</a></li>
+      <li><a href="https://tiktok.com/@mamaflow.io" target="_blank">TikTok @mamaflow.io</a></li>
+      <li><a href="https://instagram.com/mamaflow.io" target="_blank">Instagram @mamaflow.io</a></li>
+      <li><a href="mailto:hi@mamaflow.io">hi@mamaflow.io</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 MamaFlow Ltd. Registered in England &amp; Wales.</div>
+  </div>
+</footer>
+
+<div class="mobile-bottom-nav">
+  <div class="mobile-bottom-nav-inner">
+    <a href="index.html" class="mbn-item">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="9 22 9 12 15 12 15 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Home</span>
+    </a>
+    <a href="science.html" class="mbn-item">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Science</span>
+    </a>
+    <a href="faq.html" class="mbn-item">
+      <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="12" y1="17" x2="12.01" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <span>FAQs</span>
+    </a>
+    <a href="https://tiktok.com/@mamaflow.io" target="_blank" class="mbn-item cta">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.77a4.85 4.85 0 01-1.01-.08z" fill="currentColor"/></svg>
+      <span>Follow</span>
+    </a>
+  </div>
+</div>
+
+<div class="toast-global" id="toastGlobal"></div>
+
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>30);});
+const ro=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}});},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+function showToast(msg){const t=document.getElementById('toastGlobal');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),4000);}
+function closeMobileMenu(){const m=document.getElementById('mobileMenu');if(m)m.classList.remove('open');}
+function toggleMobileMenu(){const m=document.getElementById('mobileMenu');m.classList.toggle('open');}
+document.addEventListener('click',function(e){
+  const menu=document.getElementById('mobileMenu');
+  const nav=document.getElementById('mainNav');
+  if(menu&&nav&&!nav.contains(e.target)&&!menu.contains(e.target)){menu.classList.remove('open');}
+});
+</script>
+</body>
+</html>
