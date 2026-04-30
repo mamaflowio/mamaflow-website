@@ -104,6 +104,24 @@ img{max-width:100%;display:block;}a{text-decoration:none;color:inherit;}
 .mbn-item.cta{background:var(--warm-dk);border-radius:12px;color:var(--cream);padding:8px 14px;}
 .mbn-item.cta span{color:var(--cream);}
 @media(max-width:768px){.mobile-bottom-nav{display:block;}.section{padding-bottom:calc(72px + env(safe-area-inset-bottom));}}
+
+.drawer-overlay{display:none;position:fixed;inset:0;background:rgba(44,31,26,.5);z-index:1000;opacity:0;transition:opacity .3s var(--ease);}
+.drawer-overlay.open{display:block;opacity:1;}
+.drawer{position:fixed;bottom:0;left:0;right:0;background:var(--cream);border-radius:24px 24px 0 0;padding:32px 28px max(28px,env(safe-area-inset-bottom));z-index:1001;transform:translateY(100%);transition:transform .4s var(--ease);max-width:560px;margin:0 auto;}
+.drawer.open{transform:translateY(0);}
+.drawer-handle{width:36px;height:4px;border-radius:2px;background:var(--sand);margin:0 auto 24px;}
+.drawer-eyebrow{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mauve);margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+.drawer-eyebrow::before{content:'';width:16px;height:1px;background:var(--mauve);}
+.drawer-h{font-family:var(--ff-d);font-size:28px;font-weight:300;font-style:italic;color:var(--warm-dk);margin-bottom:8px;line-height:1.2;}
+.drawer-lead{font-size:14px;color:var(--warm-mid);line-height:1.65;font-weight:300;margin-bottom:24px;}
+.drawer-form{display:flex;flex-direction:column;gap:10px;}
+.drawer-input{padding:13px 16px;border-radius:12px;border:1.5px solid var(--sand);font-family:var(--ff-b);font-size:14px;color:var(--warm-dk);background:white;outline:none;transition:border-color .2s;}
+.drawer-input:focus{border-color:var(--mauve-lt);}
+.drawer-input::placeholder{color:var(--warm-lt);}
+.drawer-btn{padding:14px;border-radius:100px;background:var(--warm-dk);color:var(--cream);font-family:var(--ff-b);font-size:14px;font-weight:600;border:none;cursor:pointer;transition:background .2s;text-align:center;}
+.drawer-btn:hover{background:var(--mauve-dk);}
+.drawer-btn.success{background:var(--sage-dk);}
+.drawer-note{font-size:11.5px;color:var(--warm-lt);text-align:center;margin-top:8px;}
 </style>
 <style>
 .page-hero{padding:140px 0 80px;background:var(--parchment);position:relative;}
@@ -318,12 +336,29 @@ img{max-width:100%;display:block;}a{text-decoration:none;color:inherit;}
       <svg viewBox="0 0 24 24" fill="none"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <span>Science</span>
     </a>
-    <a href="index.html#waitlist" class="mbn-item cta">
+    <a href="#" onclick="openDrawer();return false;" class="mbn-item cta">
       <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       <span>Join</span>
     </a>
   </div>
 </div>
+
+<div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
+<div class="drawer" id="joinDrawer">
+  <div class="drawer-handle"></div>
+  <div class="drawer-eyebrow">Join the waitlist</div>
+  <h2 class="drawer-h">You deserve support<br>that shows up for you.</h2>
+  <p class="drawer-lead">Founding member pricing guaranteed for 24 months. First 100 only.</p>
+  <form class="drawer-form" id="drawerForm" method="POST" action="https://115128fe.sibforms.com/serve/MUIFACeAtoYDPFxRCN_wZVb9nkRljCpPGPhkBweqcxGMDApmxEVnmCUDHNK7aTx6rWpHjxzTIfvUCEX8KBb9ibKHd83xmsJsvLOiRjyzm7GJ8rKdQN-XoloahzyO19TDMB6l8Ugy7b8bzWDf2VJlcx6gOsdD51aT15_8kv13RK38PYrneGa5eCvptetGEOHe2cWjWGUy_ltq7ZQZxg==" data-type="subscription">
+    <input class="drawer-input" type="text" name="FIRSTNAME" placeholder="First name (optional)" autocomplete="off" maxlength="200">
+    <input class="drawer-input" type="email" name="EMAIL" id="drawerEmail" placeholder="Your email address" required data-required="true">
+    <button class="drawer-btn" type="submit" id="drawerBtn">Reserve my spot</button>
+    <input type="text" name="email_address_check" value="" style="display:none;">
+    <input type="hidden" name="locale" value="en">
+  </form>
+  <p class="drawer-note">No spam. No nonsense. Just your spot on the list.</p>
+</div>
+
 <div class="toast-global" id="toastGlobal"></div>
 <script>
 window.addEventListener('scroll',()=>{document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>30);});
@@ -337,6 +372,19 @@ function toggleMobileMenu(){const m=document.getElementById('mobileMenu');m.clas
 function toggleFaq(el){const item=el.closest('.faq-item');const wasOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));if(!wasOpen)item.classList.add('open');}
 function filterFaq(cat,btn){document.querySelectorAll('.faq-cat-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.faq-item').forEach(item=>{item.style.display=(item.dataset.cat===cat)?'':'none';item.classList.remove('open');});}
 document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('.faq-item').forEach(item=>{item.style.display=item.dataset.cat==='app'?'':'none';});});
+
+function openDrawer(){
+  document.getElementById('drawerOverlay').classList.add('open');
+  document.getElementById('joinDrawer').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeDrawer(){
+  document.getElementById('drawerOverlay').classList.remove('open');
+  document.getElementById('joinDrawer').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDrawer();});
+
 </script>
 <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
 <style>
