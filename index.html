@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -111,6 +112,7 @@ img{max-width:100%;display:block;}a{text-decoration:none;color:inherit;}
 .scroll-arrow{width:20px;height:20px;display:block;animation:scrollBounce 1.8s ease-in-out infinite;}
 @keyframes scrollBounce{0%,100%{transform:translateY(0);}50%{transform:translateY(5px);}}
 </style>
+
 <style>
 /* HERO */
 .hero{padding:160px 0 100px;position:relative;overflow:hidden;background:var(--cream);}
@@ -149,11 +151,14 @@ img{max-width:100%;display:block;}a{text-decoration:none;color:inherit;}
 .problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px;}
 .problem-card{background:var(--white);border-radius:20px;padding:32px;border:1px solid var(--sand);position:relative;overflow:hidden;transition:transform .3s var(--ease),box-shadow .3s;}
 .problem-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(157,129,137,.12);}
-.problem-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:20px 20px 0 0;}
+.problem-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;border-radius:20px 20px 0 0;}
 .problem-card:nth-child(1)::before{background:var(--pink);}
 .problem-card:nth-child(2)::before{background:var(--sage-dk);}
 .problem-card:nth-child(3)::before{background:var(--terra);}
-.pc-emoji{font-size:32px;margin-bottom:16px;display:block;}
+.pc-marker{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;margin-bottom:20px;font-family:var(--ff-d);font-size:15px;font-weight:600;letter-spacing:.02em;}
+.problem-card:nth-child(1) .pc-marker{background:var(--warm-mid);color:var(--blush);}
+.problem-card:nth-child(2) .pc-marker{background:var(--warm-mid);color:var(--sage);}
+.problem-card:nth-child(3) .pc-marker{background:var(--warm-mid);color:var(--terra-lt);}
 .pc-h{font-family:var(--ff-d);font-size:22px;font-weight:600;color:var(--warm-dk);margin-bottom:10px;}
 .pc-p{font-size:14px;color:var(--warm-mid);line-height:1.7;font-weight:300;}
 /* HOW IT WORKS */
@@ -248,6 +253,7 @@ img{max-width:100%;display:block;}a{text-decoration:none;color:inherit;}
 @media(max-width:900px){.hero-inner{grid-template-columns:1fr;gap:60px;}.hero-visual{display:none;}.problem-grid{grid-template-columns:1fr;}.steps-row{grid-template-columns:1fr 1fr;}.steps-row::before{display:none;}.states-grid{grid-template-columns:1fr 1fr;}.pricing-grid{grid-template-columns:1fr;max-width:440px;margin-left:auto;margin-right:auto;}.price-card.featured{transform:scale(1);}.founder-short{grid-template-columns:1fr;}.food-cards{grid-template-columns:1fr;}.science-teaser{flex-direction:column;}}
 @media(max-width:600px){.states-grid{grid-template-columns:1fr;}.steps-row{grid-template-columns:1fr;}.hero{padding:120px 0 72px;}}
 </style>
+
 </head>
 <body>
 <nav class="nav" id="mainNav">
@@ -272,14 +278,16 @@ img{max-width:100%;display:block;}a{text-decoration:none;color:inherit;}
 </div>
 
 <!-- HERO -->
+
 <section class="hero" id="home">
   <div class="hero-glow-1"></div><div class="hero-glow-2"></div>
   <div class="container">
     <div class="hero-inner">
       <div class="hero-text">
         <div class="eyebrow fade-up d1">Built for real motherhood</div>
-        <h1 class="h1 fade-up d2">Your plan <em>changes.</em><br>Because your<br>days do.</h1>
-        <p class="lead fade-up d3">MamaFlow reads how you feel today — and builds a movement and food plan around your real life. Not a good day. <em>Today.</em></p>
+        <h1 class="h1 fade-up d2">Your daily plan <em>changes.</em><br>Because your days do.</h1>
+        <p class="lead fade-up d3">MamaFlow is a postpartum fitness and nutrition app that reads how you're actually feeling — sleep, energy, body — and builds your movement and food plan around that. Not a perfect day. The day you're having.</p>
+        <p class="fade-up d4" style="font-size:13px;color:var(--warm-lt);margin-top:12px;font-style:italic;">From Tendai — c-section mum, @tendieex.</p>
         <div id="sib-form-container" class="sib-form-container">
   <div id="error-message" class="sib-form-message-panel" style="display:none;font-family:var(--ff-b);font-size:13px;color:#661d1d;background:#ffeded;border:1px solid #ff4949;border-radius:10px;padding:10px 16px;max-width:440px;margin-bottom:10px;">
     Something went wrong — please try again or email hi@mamaflow.io
@@ -345,6 +353,7 @@ img{max-width:100%;display:block;}a{text-decoration:none;color:inherit;}
 </section>
 
 <!-- PROBLEM -->
+
 <section class="section section-alt" id="problem">
   <div class="container">
     <div class="eyebrow reveal">Sound familiar?</div>
@@ -352,17 +361,17 @@ img{max-width:100%;display:block;}a{text-decoration:none;color:inherit;}
     <p class="lead reveal" style="max-width:520px;margin-top:12px;">You didn't. And that's not your fault — it's theirs.</p>
     <div class="problem-grid">
       <div class="problem-card reveal">
-        <span class="pc-emoji">😴</span>
+        <div class="pc-marker">3h</div>
         <h3 class="pc-h">You had 3 hours sleep</h3>
         <p class="pc-p">But the app still says it's HIIT day. So you skip it. The guilt starts. The streak breaks. You stop opening the app.</p>
       </div>
       <div class="problem-card reveal">
-        <span class="pc-emoji">⏱️</span>
+        <div class="pc-marker">15'</div>
         <h3 class="pc-h">You have 15 minutes</h3>
         <p class="pc-p">The workout is 45. You do nothing instead. The app becomes another thing you're failing at. It shouldn't feel this way.</p>
       </div>
       <div class="problem-card reveal">
-        <span class="pc-emoji">🤷🏾‍♀️</span>
+        <div class="pc-marker">?</div>
         <h3 class="pc-h">You were cleared. Now what?</h3>
         <p class="pc-p">The doctor said you're fine to exercise. But nobody told you what that actually means for your specific body, your delivery, your recovery.</p>
       </div>
@@ -371,6 +380,7 @@ img{max-width:100%;display:block;}a{text-decoration:none;color:inherit;}
 </section>
 
 <!-- HOW IT WORKS -->
+
 <section class="section" id="how-it-works">
   <div class="container">
     <div class="eyebrow reveal">The difference</div>
@@ -402,6 +412,7 @@ img{max-width:100%;display:block;}a{text-decoration:none;color:inherit;}
 </section>
 
 <!-- FOOD PHILOSOPHY -->
+
 <section class="section food-phil-section">
   <div class="container">
     <div class="eyebrow reveal" style="color:var(--blush);">The Food Philosophy</div>
@@ -426,6 +437,7 @@ img{max-width:100%;display:block;}a{text-decoration:none;color:inherit;}
 </section>
 
 <!-- PIVOT STATES -->
+
 <section class="section section-alt">
   <div class="container">
     <div class="eyebrow reveal">The Pivot Engine</div>
@@ -462,6 +474,7 @@ img{max-width:100%;display:block;}a{text-decoration:none;color:inherit;}
 </section>
 
 <!-- TESTIMONIAL -->
+
 <div class="testimonial-wrap reveal">
   <div class="container">
     <p class="t-quote">"I've tried every postpartum fitness app. They all made me feel like I was failing. MamaFlow made me feel like someone finally understood what my life actually looks like."</p>
@@ -470,6 +483,7 @@ img{max-width:100%;display:block;}a{text-decoration:none;color:inherit;}
 </div>
 
 <!-- FOUNDER — short form -->
+
 <section class="section" id="founder">
   <div class="container">
     <div class="founder-short">
@@ -513,6 +527,7 @@ img{max-width:100%;display:block;}a{text-decoration:none;color:inherit;}
 </section>
 
 <!-- PRICING -->
+
 <section class="section section-alt" id="pricing">
   <div class="container">
     <div class="eyebrow reveal">Pricing</div>
@@ -568,6 +583,7 @@ img{max-width:100%;display:block;}a{text-decoration:none;color:inherit;}
 </section>
 
 <!-- FINAL CTA -->
+
 <section class="final-cta" id="waitlist">
   <div class="container">
     <div class="eyebrow reveal" style="justify-content:center;">Join the Waitlist</div>
@@ -641,12 +657,13 @@ function closeMobileMenu(){const m=document.getElementById("mobileMenu");if(m)m.
 function toggleMobileMenu(){const m=document.getElementById('mobileMenu');m.classList.toggle('open');}
 
 document.addEventListener('click',function(e){
-  const menu=document.getElementById('mobileMenu');
-  const nav=document.getElementById('mainNav');
-  if(menu&&nav&&!nav.contains(e.target)&&!menu.contains(e.target)){
-    menu.classList.remove('open');
-  }
+const menu=document.getElementById('mobileMenu');
+const nav=document.getElementById('mainNav');
+if(menu&&nav&&!nav.contains(e.target)&&!menu.contains(e.target)){
+menu.classList.remove('open');
+}
 });
 </script>
+
 </body>
 </html>
